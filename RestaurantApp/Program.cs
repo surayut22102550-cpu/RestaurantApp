@@ -27,6 +27,12 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"ID: {r.Id} | Name: {r.Name} | Category: {r.Category} | Score: {r.Score}");
             }
+            Console.WriteLine("=== Restaurant Summary ===");
+
+            Console.WriteLine($"Total Restaurants: {restaurants.Count}");
+
+            double averageScore = restaurants.Average(r => r.Score);
+            Console.WriteLine($"Average Score: {averageScore:F2}");
 
             Console.ReadLine();
         }
