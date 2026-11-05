@@ -27,6 +27,8 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"ID: {r.Id} | Name: {r.Name} | Category: {r.Category} | Score: {r.Score}");
             }
+            Console.WriteLine("\n");
+
             Console.WriteLine("=== Restaurant Summary ===");
 
             Console.WriteLine($"Total Restaurants: {restaurants.Count}");
