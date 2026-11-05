@@ -1,8 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestaurantApp
 {
@@ -10,9 +9,6 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("DDer");
-            Console.WriteLine("Week2");
-
             List<Restaurant> restaurants = new List<Restaurant>
             {
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
@@ -22,23 +18,33 @@ namespace RestaurantApp
                 new Restaurant(5, "Quanjude Roast Duck", "Beijing Cuisine", 4.5)
             };
 
-            Console.WriteLine("=== Restaurant List ===");
+            Console.WriteLine("========================================");
+            Console.WriteLine("          RESTAURANT MANAGEMENT");
+            Console.WriteLine("========================================");
+
+            Console.WriteLine("\n=== Restaurant List ===");
+
             foreach (var r in restaurants)
             {
-                Console.WriteLine($"ID: {r.Id} | Name: {r.Name} | Category: {r.Category} | Score: {r.Score}");
+                Console.WriteLine(
+                    $"ID: {r.Id,-3} | Name: {r.Name,-25} | Category: {r.Category,-18} | Score: {r.Score:F1}");
             }
-            Console.WriteLine("\n");
 
-            Console.WriteLine("=== Restaurant Summary ===");
+            Console.WriteLine("\n========================================");
+            Console.WriteLine("          RESTAURANT SUMMARY");
+            Console.WriteLine("========================================");
 
-            Console.WriteLine($"Total Restaurants: {restaurants.Count}");
+            Console.WriteLine($"Total Restaurants : {restaurants.Count}");
 
             double averageScore = restaurants.Average(r => r.Score);
-            Console.WriteLine($"Average Score: {averageScore:F2}");
+            Console.WriteLine($"Average Score     : {averageScore:F2}");
+
+            Console.WriteLine("========================================");
 
             Console.ReadLine();
         }
     }
+
     public class Restaurant
     {
         public int Id { get; set; }
